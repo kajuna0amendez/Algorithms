@@ -6,6 +6,7 @@ I have the classics:
 
 * Binary Trees
 * Hash Tables
+* Quicksort using Tail Recursion
 
 
  
