@@ -4,3 +4,4 @@
 # ignore objects
 *.o
 *.so
+*~
