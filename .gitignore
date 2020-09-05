@@ -1,0 +1,6 @@
+# ignore swp files in all directories
+**/.*.swp
+**/build
+# ignore objects
+*.o
+*.so
