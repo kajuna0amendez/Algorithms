@@ -31,14 +31,10 @@ But I have been adding some testing of using ctypes and python
 	+ The installation assumes a linux environment
 
 1. pull the docker using the command **sudo docker pull ubuntu**
-	+ For what we have seen it is the latest kernel
-	
-	$$$$ 
+	+ For what we have seen it is the latest kernel 
 
 2. Run the docker for the first time 
 	+ **sudo docker run -p 8888:8888 -it --name min_ubuntu <IMG_ID> /bin/bash**
-	
-	$$$$
 
 3. Get out of the bash using **exit**
 
