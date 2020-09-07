@@ -68,3 +68,6 @@ But I have been adding some testing of using ctypes and python
 		+ jupyter notebook --ip=0.0.0.0 --allow-root --port=8888
 
  
+### Using VisualStudio to connect to the docker 
+	Install Visual Studio and use the following extension to connect it to the running docker
+		+ https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
