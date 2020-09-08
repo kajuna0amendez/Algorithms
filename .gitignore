@@ -5,3 +5,5 @@
 *.o
 *.so
 *~
+# ignore the pycache
+__pycache__/
