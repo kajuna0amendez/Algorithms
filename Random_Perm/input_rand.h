@@ -1,6 +1,5 @@
-#ifndef INSERTIONSORT_FILE
-#define INSERTIONSORT_FILE
-
+#ifndef INPUT_RAND_FILE
+#define INPUT_RAND_FILE
 /*Randomization Definition*/
 
 /*

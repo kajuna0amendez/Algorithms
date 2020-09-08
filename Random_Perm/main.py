@@ -26,6 +26,10 @@ if __name__ == "__main__":
 
         c_lib = ctypes.CDLL(libname)
 
+        c_lib.permute_by_sorting.restype = ctypes.c_void_p
+
+        c_lib.permute_in_place.restype = ctypes.c_void_p
+
         singlepp = ndpointer(dtype = np.int32, ndim = 1, flags = 'C') 
 
         c_lib.permute_by_sorting.argtypes = [singlepp, ctypes.c_int]

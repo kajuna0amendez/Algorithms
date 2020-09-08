@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <math.h> 
 #include <stdlib.h>
+#include "input_rand.h"
 
 
 void permute_by_sorting( int *arr, int n){

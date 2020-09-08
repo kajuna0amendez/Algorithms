@@ -26,6 +26,9 @@ if __name__ == "__main__":
 
         c_lib = ctypes.CDLL(libname)
 
+        # Define return void pointer
+        c_lib.InsertionSort.restype = ctypes.c_void_p
+
         singlepp = ndpointer(dtype = np.int32, ndim = 1, flags = 'C') 
 
         c_lib.InsertionSort.argtypes = [singlepp, ctypes.c_int]
