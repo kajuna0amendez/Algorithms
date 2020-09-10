@@ -18,7 +18,7 @@ import pathlib
 
 if __name__ == "__main__":
 
-    tlabel = 2
+    tlabel = 1
 
     if tlabel == 1:
         # Load the shared library into c types.
@@ -33,14 +33,14 @@ if __name__ == "__main__":
         c_lib.cprint_array.argtypes = [singlepp, ctypes.c_int]
 
         # Define ndarray
-        x = np.arange(9, dtype = np.int32 ).reshape((3, 3))
+        x = np.arange(9, dtype = np.int32 )
 
-        print(x)
+        #print(x)
 
         # Define the m parameter for the array len 
         m = ctypes.c_int(x.shape[0]) 
 
-        print(m)
+        # print(m)
         
         c_lib.cprint_array(x, m)
 

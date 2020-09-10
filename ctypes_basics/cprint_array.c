@@ -6,7 +6,7 @@
 void cprint_array(int *arr, int m){
     int i;
     for(i=0; i < m; i++){
-        arr[i] = 2*arr[i];
+        //arr[i] = 2*arr[i];
         printf("%i ", arr[i]);
     }
     printf("\n");

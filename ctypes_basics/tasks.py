@@ -1,14 +1,14 @@
 """ Task definitions for invoke command line utility for python bindings
     overview article. """
-import cffi
+#import cffi
 import invoke
-import pathlib
+#import pathlib
 
 
 @invoke.task
 def clean(c):
     """ Remove any built objects """
-    for pattern in ["*.o", "*.so", "cffi_example* cython_wrapper.cpp"]:
+    for pattern in ["*.o", "*.so"]:
         c.run("rm -rf {}".format(pattern))
 
 
