@@ -8,12 +8,15 @@ Here are different pieces of code that I have been working as part of
 
 I have the classics in c++ and python:
 
+* Counting sort
+* Quicksort using Tail Recursion
+* Recursive Insertion Sort
+* Heaps
+* Hash Tables
 * Binary Trees
 * Binary Search Trees
 * AVLTrees
-* Hash Tables
-* Counting sort
-* Quicksort using Tail Recursion
+* etc
 
 But I have been adding some testing of using ctypes and python
 
