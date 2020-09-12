@@ -1,4 +1,4 @@
-// InsertioSort.c
+// InsertionSort.c
 
 #include <stdio.h>
 #include "InsertionSort.h"
