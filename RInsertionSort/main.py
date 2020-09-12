@@ -12,14 +12,34 @@ __name__ = "__main__"
 
 import numpy as np 
 from r_imp_insertion_sort import RInsertionSort
+from wrapper_ins_sort import recursive_insertion_sort
 
 
 if __name__ == "__main__":
 
-    x = np.arange(10, 0, -1, dtype = np.int32 )
+    tlabel = 1
 
-    print(x)
+    if tlabel == 0:
 
-    RInsertionSort(x)
+        x = np.arange(10, 0, -1, dtype = np.int32 )
 
-    print(x)
+        print('recursive insertion sort using tail recursion Python')
+
+        print(x)
+
+        RInsertionSort(x)
+
+        print(x)
+    
+    elif tlabel == 1:
+        
+        x = np.arange(10, 0, -1, dtype = np.int32 )
+
+        print('recursive insertion sort using tail recursion C')
+
+
+        print(x)
+
+        RInsertionSort(x)
+
+        print(x)

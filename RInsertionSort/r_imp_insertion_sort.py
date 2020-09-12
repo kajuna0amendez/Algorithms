@@ -19,15 +19,19 @@ class TailRecurseException:
 
 def tail_call_optimized(g):
   """
-  This function decorates a function with tail call
-  optimization. 
+  This function decorates a function with an interpreted version of
+  tail recursion
   """
   def func(*args, **kwargs):
-    f = sys._getframe()
+    f = sys._getframe() # Top frame
+    # if two and three depth frames exist and  if the code at the top
+    # recursion and the three depth frame use the same code 
     if f.f_back and f.f_back.f_back and f.f_back.f_back.f_back  \
         and f.f_back.f_back.f_back.f_code == f.f_code:
+      # Break the recursion
       raise TailRecurseException(args, kwargs)
     else:
+      # Here you run the frame in a try catch setup
       while 1:
         try:
           return g(*args, **kwargs)
@@ -87,7 +91,7 @@ def go(array, key, j):
     """
     Tail based recursion 
     """
-    if key >= array[j] or j<0:
+    if key >= array[j] or j < 0:
         array[j+1] = key
     else:
         array[j+1] = array[j]
