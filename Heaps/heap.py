@@ -15,6 +15,7 @@ from numpy.ctypeslib import ndpointer
 import numpy as np
 import pathlib
 import sys
+import os
 
 class heap:
     """
@@ -36,7 +37,8 @@ class heap:
         """
         # Load the shared library into c types.
         self._bsize = 9
-        self._heap_name =  pathlib.Path().absolute() / "cheap.so"
+        sPath = os.environ.get("AAVAR")+'/Heaps' 
+        self._heap_name =  pathlib.Path(sPath).absolute() / "cheap.so"
         self._singlepp = ndpointer(dtype = np.int32, ndim = 1, flags = 'C')
         self._cheap = ctypes.CDLL(self._heap_name)
         self._cheap.max_heapify.argtypes = [self._singlepp, ctypes.c_int, ctypes.c_int]
@@ -94,7 +96,7 @@ class heap:
         Printing container
         """
         for i in range(1, len(self._container)):
-            print(str(i)+' = '+str(self._container[i]), end=' ')
+            print(str(self._container[i]), end=' ')
         print('')
 
     def build_heap(self):

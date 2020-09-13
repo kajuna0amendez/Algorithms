@@ -25,9 +25,9 @@ def print_banner(msg):
 
 
 @invoke.task
-def build_heap(c):
+def build_sortloop(c):
     """ Build the shared library for the sample C code """
     print_banner("Building C Library")
-    invoke.run("gcc -c -Wall -Werror -fpic cheap.c -I /usr/include/python3.8")
-    invoke.run("gcc -shared -o cheap.so cheap.o")
+    invoke.run("gcc -c -Wall -Werror -fpic sort_loop.c  -I /usr/include/python3.8")
+    invoke.run("gcc -shared -o sort_loop.so sort_loop.o -L /home/andres/Dropbox/Code/AnalysisOfAlgorithms/Heaps")
     print("* Complete")
