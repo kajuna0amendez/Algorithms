@@ -8,7 +8,7 @@ __version__ = "1.0.0"
 __maintainer__ = "Andres Mendez-Vazquez"
 __email__ = "kajuna0kajuna@gmail.com"
 __status__ = "Development"
-#__name__ = "merge_sort"
+__name__ = "merge_sort"
 
 import ctypes
 from numpy.ctypeslib import ndpointer 
@@ -42,8 +42,8 @@ def merge_sort(arr):
         if type(arr[0]) is np.int32:
             lower = ctypes.c_int(0)
             upper = ctypes.c_int(arr.shape[0] - 1)
-            print(lower)
-            print(upper)
+            #print(lower)
+            #print(upper)
             _cmerge.merge_sort(arr, lower, upper)
         else:
             # Exit with error

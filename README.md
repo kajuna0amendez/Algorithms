@@ -58,11 +58,17 @@ But I have been adding some testing of using ctypes and python
 	6. pip3 install numpy
 	7. pip3 install cython
 	8. pip3 install ctypes-callable
-	9. pip3 install jupyter notebook  
+	9. pip3 install jupyter notebook
+	
+### ENV Variable Setup
+
+We are using an environmental variable to set certain paths of compilation at the python wrappers
+	+ export AAVAR=$(pwd)
+	
+at bash shell command. This needs to be executed at the root path where the git clone was done  
    
 ### Github
 	Now, we need to clone the github site for the algorithms
-		
 		+ Move to your directory
 		+ git clone https://github.com/kajuna0amendez/Algorithms.git
 	
