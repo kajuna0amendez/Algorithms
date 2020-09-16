@@ -15,7 +15,10 @@ import numpy as np
 from numpy.ctypeslib import ndpointer 
 import ctypes
 import pathlib
-from merge_sort import merge_sort
+import time
+from merge_sort import merge_sort, merge_sort_inplace
+import matplotlib
+import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
 
@@ -24,12 +27,35 @@ if __name__ == "__main__":
     if tlabel == 1:
 
         # Array to sort
-        x = np.arange(100,1,-1, dtype = np.int32 )
+        x = np.arange(10,1,-1, dtype = np.int32 )
         print(x)
+        y =  x.copy()
+        merge_sort_inplace(y)
 
-        merge_sort(x)
+        print(np.sort(x)-y)
 
+
+        x = np.random.randint(100000, size=100, dtype = np.int32)
         print(x)
+        y =  x.copy()
+        merge_sort_inplace(y)
+        print(np.sort(x)-y)
+
+        x_a = list()
+        y_a = list()
+        for i in range(1,1000):
+            x = np.random.randint(1e8, size=10*i, dtype = np.int32)
+            start_time = time.time()
+            merge_sort_inplace(x)
+            y_a.append(time.time()-start_time)
+            x_a.append(i*100)
+
+    plt.figure()
+    plt.plot(np.array(x_a),np.array(y_a))
+    plt.show()
+
+        
+
 
 
         
