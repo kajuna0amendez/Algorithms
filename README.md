@@ -59,6 +59,7 @@ But I have been adding some testing of using ctypes and python
 	7. pip3 install cython
 	8. pip3 install ctypes-callable
 	9. pip3 install jupyter notebook
+	10. pip3 install git
 	
 ### ENV Variable Setup
 
@@ -79,4 +80,5 @@ at bash shell command. This needs to be executed at the root path where the git 
  
 ### Using VisualStudio to connect to the docker 
 	Install Visual Studio and use the following extension to connect it to the running docker
-		+ https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+		+ https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containeris
+
