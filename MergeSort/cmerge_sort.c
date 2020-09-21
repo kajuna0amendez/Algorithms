@@ -35,8 +35,8 @@ void merge_sort_inplace(int *arr, int lower, int upper){
     if(lower<upper){
         q = (lower+upper)/2;
         // Divide part
-        merge_sort(arr, lower, q);
-        merge_sort(arr, q+1, upper);
+        merge_sort_inplace(arr, lower, q);
+        merge_sort_inplace(arr, q+1, upper);
         // Conquer part
         merge_inplace(arr, lower, q, upper);
     }
@@ -81,46 +81,42 @@ void merge(int *arr, int low, int q, int high){
 
 void merge_inplace(int *arr, int low, int q, int high){
     // variables merge in place
-    int i, j, t;
+    int mid, mfront, temp;
 
     // init indexes defining right borders
-    i = low;
-    j = q+1;
+    mid = q+1;
 
-    while(j < high){
-        if(i < q+1){
-            if (arr[i] > arr[j]) {
-                // Xor Swap and increment i
-                arr[i] = arr[i]^arr[j];
-                arr[j] = arr[i]^arr[j];
-                arr[i] = arr[i]^arr[j];
-                i++;
-                // An idea from insertion sort
-                t = j;
-                while (arr[t] > arr[t+1]){
-                    // Xor Swap
-                    arr[t] = arr[t]^arr[t+1];
-                    arr[t+1] = arr[t]^arr[t+1];
-                    arr[t] = arr[t]^arr[t+1];
-                    t++;
-                    if (t > high-1) break;
-                }
-            } else {
-                // increment index i
-                i++;
+    // Everything is sorted
+    if (arr[q] < arr[mid]) return;
+
+    // In the case they are not sorted
+    // ---------------------------- 
+    // | low ... p | p+1 ... high |
+    // ----------------------------
+    //    i           j
+    // Case 1
+    // if  A[i] <= A[j] Then ?
+    // Case 2 
+    // if  A[j] <= A[i] Then we are less 
+    // than anybody else between low and p 
+    // Use this to obtain explanation and 
+    // the other stuff
+    while( low <= q && mid <= high){
+        if (arr[low] <= arr[mid]) {
+            low++;
+        }
+        else {
+            temp = arr[mid];
+            mfront = mid; 
+            while( mfront != low){
+                arr[mfront] = arr[mfront-1];
+                mfront--;
             }
-           
-        } else {
-            j++;
-            // Break to avoid index out of bound
-            if(j>high-1) break;
-            if (arr[i] > arr[j]){
-                // Xor Swap
-                arr[t] = arr[t]^arr[t+1];
-                arr[t+1] = arr[t]^arr[t+1];
-                arr[t] = arr[t]^arr[t+1];
-                i++;
-            } else i++;
+            arr[low] = temp;
+            low++;
+            mid++;
+            q++;
         }
     }
 }
+

@@ -36,6 +36,8 @@ void merge_sort(int *arr, int lower, int upper);
  * 
  * @param low index of arr
  * 
+ * @param q middle index of array
+ * 
  * @param high index of arr
  * 
  * @return NA
@@ -43,12 +45,30 @@ void merge_sort(int *arr, int lower, int upper);
 */
 void merge(int *arr, int low, int q, int high);
 
+
+/*
+ * The recursive part of the mergesort inplace 
+ * 
+ * @param arr array of integers with the data of 
+ * 
+ * @param lower index of arr
+ * 
+ * @param upper index of arr
+ * 
+ * @return NA
+ * 
+*/
+void merge_sort_inplace(int *arr, int lower, int upper);
+
+
 /*
  * The merge in place 
  * 
  * @param arr array of integers with the data of 
  * 
  * @param low index of arr
+ *  
+ * @param q middle index of array
  * 
  * @param high index of arr
  * 

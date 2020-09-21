@@ -30,3 +30,4 @@ def build_merge_sort(c):
     invoke.run("gcc -c -Wall -Werror -fpic cmerge_sort.c -I /usr/include/python3.8")
     invoke.run("gcc -shared -o cmerge_sort.so cmerge_sort.o")
     print("* Complete")
+
