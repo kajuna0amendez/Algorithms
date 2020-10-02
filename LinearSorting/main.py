@@ -72,34 +72,27 @@ if __name__ == "__main__":
 
 
     # Performance Test
-    slowsort = True
-    testsize = 200000
-    step = 1000
-    range_randint = 1e4
+    slowsort = False
+    testsize = 2000000
+    step = 10000
+    range_randint = 1e8
 
     if slowsort == True:
-        print('test recursive insertion sort')
+        #print('test recursive insertion sort')
+        #
+        #plt.figure()
 
-        plt.figure()
-
-        resultt = list()
-        resultn = list()
-        for i in range(1, testsize, step):
-
-            x = np.random.randint(0, range_randint, i, dtype = np.int32)
-
-            first = time.time()
-
-            recursive_insertion_sort(x)
-
-            resultt.append(time.time()-first)
-
-            resultn.append(i)
-            
-        x = np.array(resultn)
-        y = np.array(resultt)
-
-        plt.plot(x, y, 'g-', label='Recursive Insertion Sort')
+        #resultt = list()
+        #resultn = list()
+        #for i in range(1, testsize, step):
+        #    x = np.random.randint(0, range_randint, i, dtype = np.int32)
+        #    first = time.time()
+        #    recursive_insertion_sort(x)
+        #    resultt.append(time.time()-first)
+        #    resultn.append(i)
+        #x = np.array(resultn)
+        #y = np.array(resultt)
+        #plt.plot(x, y, 'g-', label='Recursive Insertion Sort')
 
         print('test in place mergesort')
 
@@ -116,7 +109,7 @@ if __name__ == "__main__":
             resultt.append(time.time()-first)
 
             resultn.append(i)
-            
+        
         x = np.array(resultn)
         y = np.array(resultt)
 
@@ -185,7 +178,6 @@ if __name__ == "__main__":
 
     plt.plot(x, y, 'k-', label='Radix Sort')
 
-
     print('test NP Sort Table')
 
     resultt = list()
@@ -206,6 +198,7 @@ if __name__ == "__main__":
     y = np.array(resultt)
 
     plt.plot(x, y, 'y-', label='Sort np')
+    plt.xlim((0, testsize))
 
     plt.legend()
 
