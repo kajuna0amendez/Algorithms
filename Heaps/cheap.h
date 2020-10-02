@@ -1,5 +1,5 @@
-#ifndef INSERTIONSORT_FILE
-#define INSERTIONSORT_FILE
+#ifndef HEAPS_FILE
+#define HEAPS_FILE
 
 /*
  * maxheapify
