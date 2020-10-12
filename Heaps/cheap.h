@@ -1,5 +1,5 @@
-#ifndef HEAPS_FILE
-#define HEAPS_FILE
+#ifndef HEAP_FILE
+#define HEAP_FILE
 
 /*
  * maxheapify
@@ -11,7 +11,7 @@
  * @return void
  * 
  */
-void max_heapify( int *arr, int i, int hs);
+static void max_heapify( int *arr, int i, int hs);
 
 /*
  * minheapify
@@ -23,7 +23,7 @@ void max_heapify( int *arr, int i, int hs);
  * @return void
  * 
  */
-void min_heapify( int *arr, int i, int hs);
+static void min_heapify( int *arr, int i, int hs);
 
 /*
  * left child index
@@ -33,7 +33,7 @@ void min_heapify( int *arr, int i, int hs);
  * @return index of left child
  * 
  */
-int _left_child(int i);
+static int _left_child(int i);
 
 /*
  * left child index
@@ -43,7 +43,7 @@ int _left_child(int i);
  * @return index of right child
  * 
  */
-int _right_child(int i);
+static int _right_child(int i);
 
 /*
  * Build max heap
@@ -57,7 +57,7 @@ int _right_child(int i);
  * @return void
  * 
  */
-void build_max_heap(int *arr, int len);
+static void build_max_heap(int *arr, int len);
 
 /*
  * Build min heap
@@ -71,7 +71,8 @@ void build_max_heap(int *arr, int len);
  * @return void
  * 
  */
-void build_min_heap(int *arr, int len);
+static void build_min_heap(int *arr, int len);
+
 
 
 #endif
